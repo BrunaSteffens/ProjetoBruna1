@@ -3,12 +3,12 @@ plugins {
 }
 
 android {
-    compileSdk 32
-
     //Habilitação do dataBinding
-    dataBinding {
-        enabled = true
+    buildFeatures {
+        dataBinding true
     }
+
+    compileSdk 32
 
     defaultConfig {
         applicationId "com.example.projetobruna1"
