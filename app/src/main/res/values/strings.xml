@@ -2,4 +2,6 @@
     <string name="app_name">ProjetoBruna1</string>
     <string name="tela_login">Digite usuário e senha</string>
     <string name="confirmar">Confirmar</string>
+    <string name="boasVindas">Bem vindo ao primeiro app da Bruna!</string>;
+
 </resources>

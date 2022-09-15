@@ -29,20 +29,10 @@ public class ActivityLogin extends AppCompatActivity {
                 EditText password = (EditText) findViewById(R.id.editTextPassword);
                 String login = user.getText().toString();
                 String senha = password.getText().toString();
-
-                //User.validarUsuario;
-
+                User usuario = new User();
+                User.getUsers();
+                usuario.validarUsuario(login, senha);
             }
         });
-
-
-
-
-        User user1 = User.getUsers().get(0);
-        Log.d(TAG, "onCreate: Buscando o usuário ");
-        User user2 = User.getUsers().get(1);
-
-        layout.setUser(user1);
-
     }
 }
