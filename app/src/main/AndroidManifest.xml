@@ -17,10 +17,10 @@
             android:name=".App"
             android:exported="false" />
         <activity
-            android:name=".model.model.ActivityLogin"
+            android:name=".ActivityLogin"
             android:exported="false" />
         <activity
-            android:name=".model.model.MainActivity"
+            android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

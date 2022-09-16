@@ -1,10 +1,10 @@
-package com.example.projetobruna1.model.model;
+package com.example.projetobruna1;
 
 import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
-import com.example.projetobruna1.R;
+import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
     private final String TAG = "MainActivity";
@@ -13,10 +13,12 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         getIntent().getIntExtra("userId", -1);
+        getSupportActionBar().hide();
         Log.d(TAG, "onCreate: começando a bagaça");
         setContentView(R.layout.activity_main);
+        Button button1 = findViewById(R.id.button1);
 
-        findViewById(R.id.button1).setOnClickListener(
+        button1.setOnClickListener(
                 (view) -> {
                     Log.d(TAG, "onCreate: Chamando a tela de login");
                     Intent intent = new Intent(view.getContext(), ActivityLogin.class);

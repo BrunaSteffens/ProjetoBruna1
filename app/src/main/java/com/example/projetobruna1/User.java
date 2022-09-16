@@ -1,4 +1,4 @@
-package com.example.projetobruna1.model.model;
+package com.example.projetobruna1;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -7,12 +7,10 @@ import java.util.List;
 
 public class User extends AppCompatActivity {
 
-    private static final String TAG = "UserActivity";
     private int id;
     private String name;
     private String userLogin;
     private String password;
-    private static boolean autenticado = false;
 
     private static List<User> usersList;
 
@@ -64,25 +62,9 @@ public class User extends AppCompatActivity {
             }
         }
         return false;
-    };
-
-
-    /*public void validarUsuario(String userLogin, String password) {
-        User.getUsers();
-        for (User user : usersList) {
-            if ((user.getUserLogin() == userLogin) && (user.getPassword() == password)) {
-                Log.d(TAG, "onCreate: Login validado");
-                Toast.makeText(this, "Usuário ou senha incorretos", Toast.LENGTH_LONG).show();
-
-                Intent intent = new Intent(getApplicationContext(), App.class);
-                startActivity(intent);
-            }
-        Toast.makeText(this, "Usuário ou senha incorretos", Toast.LENGTH_LONG).show();
-        };
-
-     */
-
     }
+
+}
 
 
 

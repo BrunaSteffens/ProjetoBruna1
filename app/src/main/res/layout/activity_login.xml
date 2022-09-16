@@ -2,33 +2,37 @@
 
 <layout>
     <data>
-        <variable name = "user" type="com.example.projetobruna1.model.model.User" />
+        <variable name = "user" type="com.example.projetobruna1.User" />
     </data>
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@drawable/background">
+
+    <View
+        android:id="@+id/containerComponents"
+        style="@style/ContainerComponents"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textView3"/>
 
     <EditText
         android:id="@+id/editTextUsuario"
-        android:layout_width="300dp"
-        android:layout_height="60dp"
-        android:layout_marginTop="50dp"
-        android:ems="10"
+        style="@style/Edit_Text"
         android:hint="Usuário"
         android:inputType="textEmailAddress"
         android:textAlignment="center"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView3"
+        app:layout_constraintEnd_toEndOf="@id/containerComponents"
+        app:layout_constraintStart_toStartOf="@id/containerComponents"
+        app:layout_constraintTop_toTopOf="@+id/containerComponents"
         tools:ignore="MissingConstraints" />
 
     <EditText
         android:id="@+id/editTextPassword"
-        android:layout_width="300dp"
-        android:layout_height="60dp"
+        style="@style/Edit_Text"
         android:ems="10"
         android:hint="Senha"
         android:inputType="textPassword"
@@ -42,25 +46,27 @@
         android:id="@+id/textView3"
         android:layout_width="262dp"
         android:layout_height="38dp"
-        android:layout_marginTop="68dp"
-        android:fontFamily="sans-serif-black"
+        android:layout_marginTop="180dp"
+        android:fontFamily="cursive"
         android:text="@string/tela_login"
+        android:textStyle="bold"
         android:textAlignment="center"
-        android:textSize="20sp"
+        android:textSize="30sp"
+        android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/botaoConfirmar"
-        android:layout_width="175dp"
-        android:layout_height="53dp"
-        android:layout_marginTop="50dp"
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/buttonConfirmar"
+        style="@style/Button"
         android:text="@string/confirmar"
-        android:textColorLink="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextPassword" />
+
+
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
