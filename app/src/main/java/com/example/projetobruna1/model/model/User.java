@@ -1,12 +1,7 @@
 package com.example.projetobruna1.model.model;
 
-import android.content.Intent;
-import android.util.Log;
-import android.widget.Toast;
-
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
-import com.example.projetobruna1.App;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -17,7 +12,7 @@ public class User extends AppCompatActivity {
     private String name;
     private String userLogin;
     private String password;
-    private boolean validacao = false;
+    private static boolean autenticado = false;
 
     private static List<User> usersList;
 
@@ -47,7 +42,9 @@ public class User extends AppCompatActivity {
         return userLogin;
     }
 
-    public static void getUsers() {
+    public static List<User> getUsers() {
+        if(usersList == null){
+            usersList = new ArrayList<>();
             usersList.add(new User(1, "Jean", "jp1", "1234"));
             usersList.add(new User(2, "Jean 2", "jp2", "1234"));
             usersList.add(new User(3, "Jean 3", "jp3", "1234"));
@@ -57,21 +54,36 @@ public class User extends AppCompatActivity {
             usersList.add(new User(13, "Bruna 13", "bs13", "1234"));
             usersList.add(new User(14, "Bruna 14", "bs14", "1234"));
         }
+        return usersList;
+    }
 
-    public void validarUsuario(String userLogin, String password) {
+    public boolean autenticar(String userLogin, String password){
+        for (User user1: usersList) {
+            if (user1.userLogin.equals(userLogin) && user1.password.equals(password)) {
+                return true;
+            }
+        }
+        return false;
+    };
+
+
+    /*public void validarUsuario(String userLogin, String password) {
+        User.getUsers();
         for (User user : usersList) {
             if ((user.getUserLogin() == userLogin) && (user.getPassword() == password)) {
                 Log.d(TAG, "onCreate: Login validado");
+                Toast.makeText(this, "Usuário ou senha incorretos", Toast.LENGTH_LONG).show();
+
                 Intent intent = new Intent(getApplicationContext(), App.class);
                 startActivity(intent);
             }
-            else{
-                Toast.makeText(this, "Usuário ou senha incorretos", Toast.LENGTH_LONG).show();
-            }
-        }
+        Toast.makeText(this, "Usuário ou senha incorretos", Toast.LENGTH_LONG).show();
+        };
 
-    };
-}
+     */
+
+    }
+
 
 
 
